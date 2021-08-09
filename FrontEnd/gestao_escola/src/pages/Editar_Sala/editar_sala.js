@@ -9,15 +9,20 @@ import axios from 'axios'
 class Editar_Sala extends Component {
 
     constructor(props) {
+
         super(props)
+
         this.state = {
+
             listaSalas: [],
             idSalaEscolhida: 0,
             nomeSala: '',
             andarSala: 0,
             metragemSala: 0,
             mensagemSucesso: ''
+
         }
+
     }
 
 
@@ -45,14 +50,17 @@ class Editar_Sala extends Component {
         document.getElementById('overlay').style.display = 'block'
 
         this.setState({
+
             idSalaEscolhida: sala.idSala,
             nomeSala: sala.nomeSala,
             andarSala: sala.andarSala,
             metragemSala: sala.metragemSala
+
         }, () => {
             console.log('a sala ' + this.state.idSalaEscolhida + 'foi selecionada')
         })
     }
+
 
 
     verModal = (salas) => {
@@ -60,14 +68,17 @@ class Editar_Sala extends Component {
         document.getElementById('modal').style.display = 'block'
 
         this.setState({
+
             idSalaEscolhida: salas.idSala,
             nomeSala: salas.nomeSala,
             andarSala: salas.andarSala,
             metragemSala: salas.metragemSala
+
         }, () => {
             console.log('a sala ' + this.state.idSalaEscolhida + 'foi selecionada')
         })
     }
+
 
 
     fecharPopUp = () => {
@@ -77,7 +88,9 @@ class Editar_Sala extends Component {
     }
 
 
+
     editarSala = (event) => {
+
         event.preventDefault()
 
         let sala = {
@@ -99,6 +112,7 @@ class Editar_Sala extends Component {
                     if (resposta.status === 204) {
 
                         this.setState({ mensagemSucesso: 'Sala alterada com sucesso!' })
+
                         this.abrirPopUpSucesso()
 
                     }
@@ -219,7 +233,7 @@ class Editar_Sala extends Component {
                     </div>
 
 
-                    <div className="cards-flex">
+                    <div className="cards-flex-sala">
                         {
                             this.state.listaSalas.map(evento => {
 
@@ -272,7 +286,7 @@ class Editar_Sala extends Component {
 
                                 <div className="editar-flex">
 
-                                    <p className="label-editar">Novo Nome:</p>
+                                    <p className="label-editar-sala">Novo Nome:</p>
                                     <input
                                         className="nome-titulo"
                                         id="nome-titulo"
@@ -283,7 +297,7 @@ class Editar_Sala extends Component {
                                         placeholder="Nome da sala"
                                     />
 
-                                    <p className="label-editar">Novo Andar:</p>
+                                    <p className="label-editar-sala">Novo Andar:</p>
                                     <input
                                         className="andar-titulo"
                                         id="andar-titulo"
@@ -296,7 +310,7 @@ class Editar_Sala extends Component {
                                         placeholder="Andar da Sala"
                                     />
 
-                                    <p className="label-editar">Nova Metragem (m²):</p>
+                                    <p className="label-editar-sala">Nova Metragem (m²):</p>
                                     <input
                                         className="metragem-titulo"
                                         id="metragem-titulo"
@@ -308,7 +322,7 @@ class Editar_Sala extends Component {
                                         placeholder="Metragem da sala"
                                     />
 
-                                    <button className="botao-alterar"
+                                    <button className="botao-alterar-sala"
                                         type="submit"
                                         onClick={this.fecharPopUp}>
                                         Alterar

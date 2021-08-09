@@ -117,19 +117,19 @@ h1{
   
   .contato-box{
     width: 90%;
-    height: 568px;
+    height: 440px;
     background-color: rgba(196, 196, 196, 0.24);
     border: solid 1px black;
     margin-top: 25px;
     margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
   }
   
   .contato-title{
     font-family: 'Bebas Neue', cursive;
     font-size: 48px;
     color: #f27b54;
-    margin-top: 40px;
-    margin-left: 30px;
     text-align: center;
   }
   
@@ -138,7 +138,7 @@ h1{
     height: 70px;
     border: solid 1px black;
     background-color: rgba(242, 123, 84, 0.3);
-    margin-top: 45px;
+    margin-top: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,7 +155,7 @@ h1{
     height: 70px;
     border: solid 1px black;
     background-color: rgba(242, 123, 84, 0.3);
-    margin-top: 45px;
+    margin-top: 5px;
     display: flex;
     align-items: center;
     justify-content: center;

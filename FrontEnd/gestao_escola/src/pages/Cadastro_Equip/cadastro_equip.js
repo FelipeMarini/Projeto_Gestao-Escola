@@ -9,7 +9,9 @@ import school from '../../assets/img/school.png'
 class Cadastro_Equip extends Component {
 
     constructor(props) {
+
         super(props)
+
         this.state = {
             listaEquipamento: [],
             marcaEquipamento: '',
@@ -20,6 +22,7 @@ class Cadastro_Equip extends Component {
             situacaoEquipamento: 0,
             mensagemSucesso: ''
         }
+
     }
 
 
@@ -29,6 +32,7 @@ class Cadastro_Equip extends Component {
 
 
     cadastrarEquipamento = (event) => {
+
         event.preventDefault()
 
         let equipamento = {
@@ -51,7 +55,8 @@ class Cadastro_Equip extends Component {
                 if (resposta.status === 201) {
 
                     this.setState({
-                        mensagemSucesso: 'Equipamento cadastrado com sucesso!', marcaEquipamento: '',
+                        mensagemSucesso: 'Equipamento cadastrado com sucesso!',
+                        marcaEquipamento: '',
                         tipoEquipamento: '',
                         numeroSerie: 0,
                         numeroPatrimonio: 0,
@@ -206,15 +211,14 @@ class Cadastro_Equip extends Component {
 
 
                         <p className="labels">Situação do Equipamento:</p>
-
                         <select
                             className="select-status"
                             name="situacaoEquipamento"
                             value={this.state.situacaoEquipamento}
                             onChange={this.atualizaState}
                         >
-                            <option className="ativo-text" value="1">Ativo</option>
-                            <option className="inativo-text" value="0">Inativo</option>
+                            <option value="0">Inativo</option>
+                            <option value="1">Ativo</option>
 
                         </select>
 

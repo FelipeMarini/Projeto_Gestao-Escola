@@ -1,21 +1,22 @@
 import { React, Component } from 'react'
 import { usuarioAutenticado } from './services/auth'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
-
 import './App.css'
-
 import school from './assets/img/school.png'
 
 
 class Login extends Component {
+
   constructor(props) {
+
     super(props)
+
     this.state = {
       email: '',
       senha: '',
       erroMensagem: ''
     }
+
   }
 
 
