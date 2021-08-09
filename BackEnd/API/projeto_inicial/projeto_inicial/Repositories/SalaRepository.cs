@@ -16,16 +16,14 @@ namespace projeto_inicial.Repositories
         {
             Sala SalaBuscada = ctx.Salas.Find(id);
 
-            if (SalaAtualizada.AndarSala != null)
-            {
-                SalaBuscada.AndarSala = SalaAtualizada.AndarSala;
-            }
+            SalaBuscada.AndarSala = SalaAtualizada.AndarSala;
+
 
             if (SalaAtualizada.NomeSala != null)
             {
                 SalaBuscada.NomeSala = SalaAtualizada.NomeSala;
             }
-            
+
             if (SalaAtualizada.MetragemSala != null)
             {
                 SalaBuscada.MetragemSala = SalaAtualizada.MetragemSala;
@@ -37,7 +35,7 @@ namespace projeto_inicial.Repositories
         public Sala BuscarPorId(int idSala)
         {
             return ctx.Salas.FirstOrDefault(s => s.IdSala == idSala);
-            
+
         }
 
         public void Cadastrar(Sala novaSala)
